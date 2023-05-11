@@ -26,15 +26,18 @@ const Characters = () => {
       {isLoading ? ( // Render the Loading component if isLoading is true
         <Loading />
       ) : (
-        <ul>
+        <div className="characters-container">
           {characters.map((character) => (
-            <li key={character.ID}>
-              <p>Name: {character['Character Name']}</p>
-              <p>House: {character.House}</p>
-              <p>Species: {character.Species}</p>
-            </li>
+            <div key={character.ID} className="character">
+              <p className="character-name">{character['Character Name']}</p>
+              <p className="character-info">House: {character.House}</p>
+              <p className="character-info">Species: {character.Species}</p>
+              <p className="character-info">Wand (Wood): {character['Wand (Wood)']}</p>
+              <p className="character-info">Wand (Core): {character['Wand (Core)']}</p>
+              <p className="character-info">Patronus: {character.Patronus}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

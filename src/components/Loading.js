@@ -4,11 +4,19 @@ import myAnimation from '../assets/loading-api.json'
 
 const Loading = () => {
   return (
-    <Lottie
-      animationData={myAnimation} // Replace animationData with your own Lottie animation data
-      loop
-      autoplay
-      style={{ height: '100px', width: '100px' }} />
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        height: '100vh'
+      }}>
+      <Lottie
+        animationData={myAnimation} // Replace animationData with your own Lottie animation data
+        loop
+        autoplay
+        style={{ height: '200px', width: '200px' }} />
+    </div>
   );
 };
 

@@ -26,15 +26,15 @@ const Spells = () => {
       {isLoading ? ( // Render the Loading component if isLoading is true
         <Loading />
       ) : (
-        <ul>
+        <div className="spells-container">
           {spells.map((spell) => (
-            <li key={spell['Spell ID']}>
-              <h2>{spell['Spell Name']}</h2>
-              <p>The effect of the spell:{spell.Effect}</p>
-              <p>How to say the spell:{spell.Incantation}</p>
-            </li>
+            <div key={spell['Spell ID']} className="spell">
+              <h2 className="spell-name">{spell['Spell Name']}</h2>
+              <p className="spell-info">Effect: {spell.Effect}</p>
+              <p className="spell-info">Incantation: {spell.Incantation}</p>
+            </div>
           ))}
-        </ul>
+        </div>
       )}
     </div>
   );

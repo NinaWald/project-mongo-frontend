@@ -20,11 +20,10 @@ const Search = () => {
   };
 
   return (
-    <div>
+    <div className="search-container">
       <h1>Character Search</h1>
       <form onSubmit={handleSearch}>
         <label htmlFor="search">
-          Search for a character:
           <input
             type="text"
             value={searchTerm}
@@ -34,13 +33,18 @@ const Search = () => {
         <button type="button" onClick={handleReset}>Reset</button>
       </form>
       {characters.length > 0 ? (
-        <div>
+        <div className="results-container">
           <h2>Search Results</h2>
           <ul>
             {characters.map((character) => (
               <li key={character['Character ID']}>
                 <h3>{character['Character Name']}</h3>
-                <p>{character.House}</p>
+                <p>Species: {character.Species}</p>
+                <p>Gender: {character.Gender}</p>
+                <p>House: {character.House}</p>
+                <p>Patronus: {character.Patronus}</p>
+                <p>Wand (Wood): {character['Wand (Wood)']}</p>
+                <p>Wand (Core): {character['Wand (Core)']}</p>
               </li>
             ))}
           </ul>
@@ -49,4 +53,5 @@ const Search = () => {
     </div>
   );
 };
+
 export default Search
