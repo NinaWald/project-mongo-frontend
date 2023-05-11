@@ -11,7 +11,7 @@ const Spells = () => {
       try {
         const response = await axios.get('https://project-mongo-api-pb7rmnzmyq-lz.a.run.app/spells');
         setSpells(response.data);
-        setIsLoading(false); // Set isLoading to false when the movies are loaded
+        setIsLoading(false); // Set isLoading to false when the spells are loaded
       } catch (error) {
         console.error(error);
         setIsLoading(false); // Also set isLoading to false on error
@@ -28,10 +28,10 @@ const Spells = () => {
       ) : (
         <ul>
           {spells.map((spell) => (
-            <li key={spell.ID}>
-              <h2>{spell.spell_name}</h2>
-              <p>{spell.effect}</p>
-              <p>{spell.incantation}</p>
+            <li key={spell['Spell ID']}>
+              <h2>{spell['Spell Name']}</h2>
+              <p>The effect of the spell:{spell.Effect}</p>
+              <p>How to say the spell:{spell.Incantation}</p>
             </li>
           ))}
         </ul>

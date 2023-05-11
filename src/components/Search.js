@@ -9,7 +9,7 @@ const Search = () => {
     event.preventDefault();
     const response = await axios.get('https://project-mongo-api-pb7rmnzmyq-lz.a.run.app/characters');
     const filteredCharacters = response.data.filter((character) => {
-      return character.title.toLowerCase().includes(searchTerm.toLowerCase());
+      return character['Character Name'].toLowerCase().includes(searchTerm.toLowerCase());
     });
     setCharacters(filteredCharacters);
   };
@@ -24,7 +24,7 @@ const Search = () => {
       <h1>Character Search</h1>
       <form onSubmit={handleSearch}>
         <label htmlFor="search">
-          Search for harry:
+          Search for a character:
           <input
             type="text"
             value={searchTerm}
@@ -38,9 +38,9 @@ const Search = () => {
           <h2>Search Results</h2>
           <ul>
             {characters.map((character) => (
-              <li key={character.id}>
-                <h3>{character.title}</h3>
-                <p>{character.description}</p>
+              <li key={character['Character ID']}>
+                <h3>{character['Character Name']}</h3>
+                <p>{character.House}</p>
               </li>
             ))}
           </ul>

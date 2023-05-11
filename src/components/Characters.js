@@ -29,8 +29,9 @@ const Characters = () => {
         <ul>
           {characters.map((character) => (
             <li key={character.ID}>
-              <p>House: {character.house}</p>
-              <p>Species: {character.species}</p>
+              <p>Name: {character['Character Name']}</p>
+              <p>House: {character.House}</p>
+              <p>Species: {character.Species}</p>
             </li>
           ))}
         </ul>

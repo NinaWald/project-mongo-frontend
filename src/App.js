@@ -19,7 +19,7 @@ export const App = () => {
               <Link to="/spells">Spells</Link>
             </li>
             <li>
-              <Link to="/search">Search Movies</Link>
+              <Link to="/search">Search Characters</Link>
             </li>
           </ul>
         </nav>
