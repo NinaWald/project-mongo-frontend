@@ -1,6 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Libre Baskerville', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   margin: 0;
@@ -9,10 +10,9 @@ body {
 }
 /* Global styles */
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: 'Libre Baskerville', serif;
 }
-
+/* Header styles */
 .header {
   background-color: rgb(71, 71, 112);
   color: white;
@@ -21,9 +21,6 @@ code {
   margin-bottom: 50px;
 }
 
-
-
-/* Header styles */
 h1 {
   display: flex;
   flex-wrap: wrap;
@@ -70,8 +67,10 @@ nav a {
 }
 
 nav a:hover {
- background-color: rgb(128, 168, 179);
  padding: 20px;
+ background-color: rgb(128, 168, 179);
+ transform: scale(1.1);
+ box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -102,14 +101,14 @@ button[type="submit"], button[type="button"] {
   padding: 0.5rem 1rem;
   font-size: 1.5rem;
   border: none;
-  background-color: #333;
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  background-color: rgb(113, 153, 205);
 }
 
 button[type="submit"]:hover, button[type="button"]:hover {
-  background-color: #fff;
+  background-color: #80e7f2;
   color: #333;
   border: 1px solid #333;
 }
@@ -121,6 +120,9 @@ ul {
   padding: 0;
 }
 
+.character-name, .spell-name {
+  color: rgb(21, 84, 84);
+}
 
 h2 {
   font-size: 2rem;
@@ -282,13 +284,7 @@ input[type="text"] {
 
   
 nav ul {
-  /*
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  width: 70%;
-  margin: 30px;
-*/
+
   width: 100%;
   flex-direction: column;
   align-items: center;
@@ -303,10 +299,9 @@ nav ul {
     margin: 1rem 0;
     padding: 10px;
     text-align: center;
-    width: 100%;
+    width: 40%;
   }
-  }
-
+  
   nav a {
     font-size: 1rem;
     padding: 0.5rem;
@@ -326,6 +321,7 @@ nav ul {
   /* Search page styles */
   label {
     font-size: 1rem;
+    
   }
 
   input[type="text"] {
@@ -338,6 +334,7 @@ nav ul {
     margin-left: 0.5rem;
     padding: 0.25rem 0.5rem;
     font-size: 1rem;
+    
   }
 
   /* Characters page styles */
@@ -409,4 +406,4 @@ nav ul {
   .results-container {
     padding: 10px;
   }
-
+}
