@@ -92,7 +92,7 @@ input[type="text"] {
   margin-left: 1rem;
   border-radius: 0.5rem;
   border: 1px solid #ccc;
-  font-size: 1.5rem;
+  font-size: 1.0 rem;
 }
 
 button[type="submit"], button[type="button"] {
@@ -325,9 +325,9 @@ nav ul {
   }
 
   input[type="text"] {
-    padding: 0.25rem;
+    padding: 0.6rem;
     margin-left: 0.5rem;
-    font-size: 1rem;
+
   }
 
   button[type="submit"], button[type="button"] {
