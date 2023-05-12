@@ -160,7 +160,6 @@ li p:not(:first-child) {
   margin: 0;
 }
 .characters-container {
-  height: 100px;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
