@@ -7,11 +7,13 @@ const Search = () => {
 
   const handleSearch = async (event) => {
     event.preventDefault();
-    const response = await axios.get('https://project-mongo-api-pb7rmnzmyq-lz.a.run.app/characters');
-    const filteredCharacters = response.data.filter((character) => {
-      return character['Character Name'].toLowerCase().includes(searchTerm.toLowerCase());
-    });
-    setCharacters(filteredCharacters);
+    try {
+      const response = await axios.get(`https://project-mongo-api-pb7rmnzmyq-lz.a.run.app/characters/name/${searchTerm}`);
+      setCharacters(response.data);
+    } catch (error) {
+      console.error(error);
+      setCharacters([]);
+    }
   };
 
   const handleReset = () => {
