@@ -21,7 +21,7 @@ code {
   margin-bottom: 50px;
 }
 
-h1 {
+h1, h2 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -29,8 +29,8 @@ h1 {
   font-size: 3rem;
   margin-bottom: 30px;
   margin-top: 50px;
-  margin-left: 30px;
-  margin-right: 30px;
+  margin-left: 40px;
+  margin-right: 40px;
 
 }
 
