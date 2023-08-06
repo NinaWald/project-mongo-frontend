@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -7,6 +8,21 @@ const Header = () => {
       <h2>(have a little patience and click on the buttons a few times,
         the api-call takes a while to get started)
       </h2>
+      <div className="navbar">
+        <nav>
+          <ul>
+            <li>
+              <Link to="/characters">All Characters</Link>
+            </li>
+            <li>
+              <Link to="/spells">Spells</Link>
+            </li>
+            <li>
+              <Link to="/search">Search Characters</Link>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 }

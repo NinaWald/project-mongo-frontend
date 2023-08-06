@@ -34,10 +34,14 @@ h1, h2 {
 
 }
 
+.navbar {
+  background-color: #fff;
+  padding: 20px;
+}
+
 nav {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
 }
 
 nav ul {
