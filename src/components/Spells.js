@@ -19,7 +19,7 @@ const Spells = () => {
     };
     fetchData();
   }, []);
-
+  console.log('Number of spells:', spells.length);
   return (
     <div>
       <h1>All spells</h1>

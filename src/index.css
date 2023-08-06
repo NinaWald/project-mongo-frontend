@@ -71,9 +71,9 @@ nav a {
 }
 
 nav a:hover {
- padding: 20px;
+ padding: 5px;
  background-color: rgb(128, 168, 179);
- transform: scale(1.1);
+ 
  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
 }
@@ -192,6 +192,9 @@ li p:not(:first-child) {
 .character-info {
   font-size: 18px;
 }
+
+/* spells*/
+
 .spells-container {
   display: flex;
   flex-wrap: wrap;
@@ -206,7 +209,7 @@ li p:not(:first-child) {
   padding: 20px;
   border-radius: 5px;
   width: 300px;
-  height: 200px;
+  height: 240px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -320,6 +323,7 @@ nav ul {
     background-color: none;
     padding: 0;
     border-radius: 0;
+    color: #9949a0;
    
    }
    

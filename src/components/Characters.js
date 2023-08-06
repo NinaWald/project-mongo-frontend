@@ -31,7 +31,7 @@ const Characters = () => {
     setShowPatronusInfo(false);
     setSelectedCharacter(null);
   };
-
+  console.log('Number of characters:', characters.length);
   return (
     <div>
       <h1>All Characters</h1>
@@ -40,12 +40,20 @@ const Characters = () => {
       ) : (
         <div className="characters-container">
           {characters.map((character) => (
-            <div key={character.ID} className="character">
+            <div key={character['Character ID']} className="character">
               <p className="character-name">{character['Character Name']}</p>
               <p className="character-info">House: {character.House}</p>
               <p className="character-info">Species: {character.Species}</p>
-              <p className="character-info">Wand (Wood): {character['Wand (Wood)']}</p>
-              <p className="character-info">Wand (Core): {character['Wand (Core)']}</p>
+              {character['Wand (Wood)'] ? (
+                <p className="character-info">Wand (Wood): {character['Wand (Wood)']}</p>
+              ) : (
+                <p className="character-info">Wand (Wood): - </p>
+              )}
+              {character['Wand (Core)'] ? (
+                <p className="character-info">Wand (Core): {character['Wand (Core)']}</p>
+              ) : (
+                <p className="character-info">Wand (Core): - </p>
+              )}
               <p className="character-info">
                 Patronus:{' '}
                 {character.Patronus ? (
