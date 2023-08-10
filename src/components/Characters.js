@@ -31,7 +31,7 @@ const Characters = () => {
     setShowPatronusInfo(false);
     setSelectedCharacter(null);
   };
-  console.log('Number of characters:', characters.length);
+  // console.log('Number of characters:', characters.length);
   return (
     <div>
       <h1>All Characters</h1>
