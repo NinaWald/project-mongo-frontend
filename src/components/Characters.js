@@ -9,17 +9,37 @@ const Characters = () => {
   const [selectedCharacter, setSelectedCharacter] = useState(null);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://project-mongo-api-pb7rmnzmyq-lz.a.run.app/characters');
-        setCharacters(response.data);
-        setIsLoading(false);
-      } catch (error) {
-        console.error(error);
-        setIsLoading(false);
+    // Function to fetch data with retries
+    const fetchDataWithRetry = async (maxRetries) => {
+      async function fetchData() {
+        try {
+          const response = await axios.get('https://project-mongo-api-pb7rmnzmyq-lz.a.run.app/characters');
+          setCharacters(response.data);
+          setIsLoading(false);
+          return true; // Exit the loop if successful
+        } catch (error) {
+          console.error(error);
+          return false; // Retry if unsuccessful
+        }
+      }
+
+      // eslint-disable-next-line no-plusplus
+      for (let retry = 0; retry < maxRetries; retry++) {
+        // eslint-disable-next-line no-await-in-loop
+        const success = await fetchData();
+        if (success) return; // Exit the loop if successful
+        if (retry < maxRetries - 1) {
+          // Retry after a delay (e.g., 2 seconds)
+          // eslint-disable-next-line no-await-in-loop, no-promise-executor-return
+          await new Promise((resolve) => setTimeout(resolve, 2000));
+        } else {
+          setIsLoading(false);
+        }
       }
     };
-    fetchData();
+
+    // Call fetchDataWithRetry with a maximum number of retries
+    fetchDataWithRetry(3); // Retry up to 3 times before giving up
   }, []);
 
   const handlePatronusClick = (character) => {
