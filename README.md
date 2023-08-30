@@ -1,5 +1,5 @@
 This is a project where I learned how to make my own backend and connect it to the frontend.
-# THe FRONTEND part; Project Mongo API
+# The FRONTEND part; Project Mongo API
 This is a React application that displays a list of characters from the Harry Potter series. The data is fetched from an external API (https://project-mongo-api-pb7rmnzmyq-lz.a.run.app) and rendered on the page. Users can also view additional information about the Patronus of each character by clicking on their respective Patronus.
 
 The "Characters" component is the main part of the application. It is responsible for fetching character data from the API, rendering the characters on the page, and handling interactions related to the Patronus information.
