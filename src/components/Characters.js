@@ -40,15 +40,18 @@ const retryFetch = async () => {: This defines another inner function named retr
     It's responsible for managing the retry logic.
     if (retries < maxRetries) { ... }: This condition checks if the number of retries is less
     than the maximum allowed retries.
+
     If it is, it proceeds to fetch data using the fetchData function.
     const success = await fetchData();: It calls the fetchData function and awaits its result.
     If the fetch is successful,
     it sets the success variable to true. If it fails, success is set to false.
+
     if (!success) { ... }: If the fetch is not successful (i.e., success is false),
     it increments the retries counter by 1 and schedules a retry after a 2-second delay
     using setTimeout.
     This recursive retry mechanism continues
     until either the fetch is successful or the maximum retries are reached.
+
     else { setIsLoading(false); }: If the maximum retries are reached without a successful fetch,
     it sets isLoading to false to indicate that the loading process is complete.
 */
